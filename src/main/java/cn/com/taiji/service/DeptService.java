@@ -36,11 +36,32 @@ public class DeptService {
 		deptRepository.findOne(dept.getId());
 		
 	}
-	
+	/**
+	 * 
+	 * @Description: 方法说明 查询全部  
+	 * @throws
+	 * @author seon
+	 */
 	public void findMenu() {
 		 deptRepository.findAll();
 		 
 	}
-	
+	/**
+	 * 根据ID进行查询
+	 * @Description: 方法说明
+	 * @param id
+	 * @return DeptDto  
+	 * @throws
+	 * @author seon
+	 * @date 2017年12月18日
+	 */
+	public DeptDto findDepartmentById(String id){
+		Dept depts=deptRepository.findDepartmentById(id);
+		return entityDto(depts);
+	}
+	private DeptDto entityDto(Dept depts) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 	
 }

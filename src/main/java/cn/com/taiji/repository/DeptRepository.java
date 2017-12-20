@@ -17,5 +17,16 @@ import cn.com.taiji.domain.Dept;
  */
 @Repository
 public interface DeptRepository extends JpaRepository<Dept,String>,JpaSpecificationExecutor<Dept>,PagingAndSortingRepository<Dept, String>{
+
+	/**
+	 * 
+	 * @Description: 根据ID进行查找
+	 * @param string
+	 * @return Dept  
+	 * @throws
+	 * @author seon
+	 * @date 2017年12月20日
+	 */
+	Dept findDepartmentById(String string);
 	
 }

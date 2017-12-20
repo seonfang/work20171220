@@ -3,6 +3,8 @@ package cn.com.taiji.dto;
 import java.util.List;
 import java.util.Map;
 
+import cn.com.taiji.domain.Dept;
+
 /**
  * 
  * 类名称：TreeDto 
@@ -24,6 +26,10 @@ public class TreeDto {
 	private Map state;
 	private String tags;
 	private List<TreeDto> nodes;
+
+	public TreeDto(Dept d) {
+		// TODO Auto-generated constructor stub
+	}
 
 	public String getText() {
 		return text;
