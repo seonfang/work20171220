@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<!-- Required Stylesheets -->
+<link rel="stylesheet"
+	th:href="@{/webjars/bootstrap/3.2.0/css/bootstrap.min.css}"
+	href="/webjars/bootstrap/2.3.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/js/bootstrap-treeview.css" />
+<!-- Required Javascript -->
+<script src="/js/jquery.js"></script>
+<script src="/js/bootstrap-treeview.js"></script>
+<style type="text/css">
+	#tree{
+		width:400px;
+		
+	}
+</style>
+</head>
+<body>
+
+	<div id="tree"></div>
+
+</body>
+</html>
+<script type="text/javascript">
+	/*<![CDATA[*/
+
+	var id = "";
+	$(function json() {
+		//将json格式的字符串传给后台转成Java对象
+		$.post("getData", function(data) {
+			console.info(data);
+			var treeData = JSON.parse(data);
+			/* var data = new Array();
+			data.push(treeData); */
+			function getTree() {
+				return treeData;
+			}
+
+			$('#tree').treeview({
+				data : getTree()
+			});
+
+		});
+	}, "text");
+
+	/*
